@@ -12,4 +12,5 @@ routes.get('/', (request, response) => {
 })
 
 routes.get('/ncms', ncmController.index)
+
 export default routes;
