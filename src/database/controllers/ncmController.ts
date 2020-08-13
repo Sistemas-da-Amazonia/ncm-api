@@ -18,6 +18,10 @@ export default class NcmController{
         } else if(NCM ) {
             const ncmcons = await db('NCM').where('NCM', '=', NCM)
             return response.json(ncmcons)
+        } else {
+            return response.json({
+                message: "NCM ou EAN não encontrado, em breve incluiremos o mesmo"
+            })
         }
     }
 }
