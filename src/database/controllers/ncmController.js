@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const connection_1 = __importDefault(require("../connection"));
 class NcmController {
     async index(request, response) {
-        const { EAN, NCM } = request.body;
+        const { EAN, NCM } = request.query;
         if (!NCM && !EAN) {
             const all = await connection_1.default('NCM');
             return response.json(all);

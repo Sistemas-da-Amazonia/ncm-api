@@ -3,7 +3,11 @@ import db from '../connection'
 
 export default class NcmController{
     async index (request: Request, response:Response) {
-        const {EAN, NCM} = request.body;
+        const filtros = request.query;
+
+        const EAN = filtros.EAN as string;
+        const NCM = filtros.NCM as string;
+
         if(!NCM && !EAN){
             const all = await db('NCM');
             return response.json(all);
